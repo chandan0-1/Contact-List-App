@@ -12,9 +12,15 @@ var items = [{
 
 app.get("/",function (req,res){
   return res.render("contact_list",{
-    title:"Contact List !",
+    title:"Contact List !!",
     contact_items : items
   });
 });
+
+// Accepting Records from From 
+app.post("/contact_path",function(req,res){
+  return res.redirect("/")//Need to give page location
+})
+
 
 app.listen(8000);
