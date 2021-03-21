@@ -10,7 +10,15 @@
         <h1>Name: <%= i.name%></h1>
         <h2>Phone: <%= i.phone %></h2>
       <% } %>
-    	<!-- <h1>from main file</h1> -->
+
+      <!-- Form to Add Data -->
+
+      <form action="/contact_path" method="POST">
+        <input type="name" name="name" placeholder="Enter Name" required>
+        <input type="number" name="phone" placeholder="Enter Phone number" required>
+        <button type="submit">Add Contact </button>    
+      </form>
+
     </body>
   </head>
 </html>
