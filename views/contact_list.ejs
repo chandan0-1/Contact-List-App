@@ -3,22 +3,37 @@
     <title>
       <%= title%>
     </title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/CSS/style.css">
+
+  </head>
 
     <body>
+      <div id="container">
+      <h1 id="Header"><i class="fas fa-address-book"></i>   Contacts List </h1>
 
       <% for (let i of contact_items){ %>
-        <h1>Name: <%= i.name%></h1>
-        <h2>Phone: <%= i.phone %></h2>
+        <div class="data">
+          <span id="name" ><%= i.name%></span>
+          <span id = "phone"><%= i.phone %></span>
+        <!-- <br> -->
+
+        <a id="delete-button" href="delete-contact/?id=<%= i._id%>">
+          <i class="far fa-times-circle"></i>
+        </a>
+      </div>
       <% } %>
 
       <!-- Form to Add Data -->
 
-      <form action="/contact_path" method="POST">
-        <input type="name" name="name" placeholder="Enter Name" required>
-        <input type="number" name="phone" placeholder="Enter Phone number" required>
-        <button type="submit">Add Contact </button>    
+      <form id="form" action="/contact_path" method="POST">
+        <input class="input" type="name" name="my_name" placeholder="Enter Name" required>
+        <input class="input" type="number" name="my_phone" placeholder="Enter Phone number" required>
+        <button id="button" type="submit">Add Contact </button>    
       </form>
+    </div>
 
     </body>
-  </head>
+  
 </html>
