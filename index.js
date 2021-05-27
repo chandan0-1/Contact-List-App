@@ -64,7 +64,6 @@ app.post("/contact_path",function(req,res){
       console.log("Error in creating the database !");
       return;
     }
-    console.log("--------",contact_data);
     return res.redirect("/");
   })
 
